@@ -1,0 +1,29 @@
+
+
+
+#userRepos{
+    font-weight: 900;
+    font-size: x-large;
+    color : #abc838;
+    margin-left: 28%;
+}
+
+#fName{
+    font-weight: 900;
+    font-size: x-large;
+    color : #abc838;
+    margin-left: 28%;
+    width : 100%;
+}
+
+#reposHeading,#followers{
+    margin-top : 5%;
+}
+
+#closeRepos,#closefName{
+    font-weight: 500;
+    font-size:large;
+    color :grey;
+    margin-left: 60%;
+    cursor: pointer;
+}

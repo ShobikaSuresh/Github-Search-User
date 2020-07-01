@@ -42,7 +42,7 @@
 
      <div class="row">
          <div class="column col-lg-2 col-md-2 col-sm-2 col-xs-2">
-            <img id = "userAvatar" ><br><br>
+            <img id = "userAvatar" style = "border-radius: 50%;"><br><br>
             <h4 id = "userId"></h4>
             <a href = "" id = "viewProfile" target="_blank"></a>
          </div>
@@ -51,20 +51,22 @@
                 <h3 class = "column col-lg-4 col-md-4 col-sm-4 col-xs-4" style = "color: dodgerblue; margin-left: auto; " id = "reposHeading"></h3>
                 <h3 class = "column col-lg-4 col-md-4 col-sm-4 col-xs-4" style = "color: dodgerblue; margin-left: auto;" id = "followers"></h3>
              </div>
+
+             <div class = "row">
+                <div  class = "column" id = "userRepos"></div>
+            </div>
+            <div class="row" id="closeRepos"></div>
+            <div class="row">
+               <div class = "column"  id = "fName"></div>
+            </div>
+            <div id="closefName" class = "row"></div>
             
          </div>
         
     </div>
     
-     <div class = "row">
-         <div  class = "column" id = "userRepos"></div>
-     </div>
-     <div class="row" id="closeRepos"></div>
-     <div class="row">
-        <div class = "column"  id = "fName"></div>
-     </div>
-     <div id="closefName" class = "row"></div>
- </div> 
+    
+ 
  <script src = "script.js"></script>   
 </body>
 </html>

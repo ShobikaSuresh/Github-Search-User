@@ -81,7 +81,7 @@ async function displayFollowers(userName,userPwd){
 var searchForm = document.getElementById("searchForm");
 var form = document.getElementById("myForm");
 
-form.addEventListener("submit", function accountDisplay(e){
+form.addEventListener("submit",(e) => {
     e.preventDefault();
 
     document.getElementById("userRepos").innerHTML = "  ";
@@ -141,23 +141,47 @@ form.addEventListener("submit", function accountDisplay(e){
                     }
             })
             .then((searchResult) => {
-                window.open(searchResult.html_url)})
-        
+                document.getElementById("userRepos").innerHTML = "  ";
+                document.getElementById("fName").innerHTML = "  ";
+                document.getElementById("followers").innerHTML = " ";
+                document.getElementById("reposHeading").innerHTML = " ";
+                document.getElementById("closefName").innerHTML = " ";
+                document.getElementById("closeRepos").innerHTML = " ";
+
+                var searchAvatar = document.getElementById("userAvatar")
+                searchAvatar.src = searchResult.avatar_url;
+                searchAvatar.style.height = "200px";
+                searchAvatar.style.width = "200px" 
+
+                var reposHeading = document.getElementById("reposHeading")
+                reposHeading.innerHTML = "Repositories"
+                reposHeading.onclick = () => displayRepos(searchName," ")       
+                reposHeading.style.cursor = "pointer"
+                reposHeading.style.color = "dodgerblue"
+
+                var followers = document.getElementById("followers")
+                followers.innerHTML = "Followers"
+                followers.onclick = () => displayFollowers(searchName," ")       
+                followers.style.cursor = "pointer"
+                followers.style.color = "dodgerblue"
+
+                document.getElementById("userId").innerHTML = searchResult.login;
+                document.getElementById("viewProfile").innerHTML = "View Profile"
+                document.getElementById("viewProfile").href = searchResult.html_url;
+            })
         })
-////////////////////////////////1///////////////////////////////////////////////////////////////////////////////////////////////////////        
+        
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
 
         var userAvatar = document.getElementById("userAvatar")
         userAvatar.src = data.avatar_url;
         userAvatar.style.height = "200px";
-        userAvatar.style.width = "200px"
+        userAvatar.style.width = "200px";
 
         var reposHeading = document.getElementById("reposHeading")
         reposHeading.innerHTML = "Repositories"
         reposHeading.onclick = () => displayRepos(userName,userPwd)       
         reposHeading.style.cursor = "pointer"
-     
-
-       
         
         var followers = document.getElementById("followers")
         followers.innerHTML = "Followers"
@@ -167,6 +191,5 @@ form.addEventListener("submit", function accountDisplay(e){
         document.getElementById("userId").innerHTML = data.login;
         document.getElementById("viewProfile").innerHTML = "View Profile"
         document.getElementById("viewProfile").href = data.html_url;
-        
-    })
+})  
 })
